@@ -69,8 +69,6 @@ V_init = mphglobal(model, 'E_cell', 'dataset', 'dset1');
 % cost_0 =func_cost(para_0, SOC_now, V_now, model,base);  
 % cost_1 = func_cost(para_0*16, SOC_now, V_now, model,base);
 
-%model.study('std1').feature('time').set('tlist', 'range(0,0.01,10)');  % 타임스텝을 0.001 단위로 시작하여 10까지 계산
-
 %% Cost function
 options = optimoptions(@fmincon,'Display','iter','MaxIterations',2);
  
