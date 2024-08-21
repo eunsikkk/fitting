@@ -31,13 +31,6 @@ model.study('std1').run;
 SOC_init = mphglobal(model, 'SOC', 'dataset', 'dset1');
 V_init = mphglobal(model, 'E_cell', 'dataset', 'dset1');
 
-%% Apply Time Step Control and Damping Factor in Solver Settings
-% Set manual time stepping with small steps initially
- %model.study('std1').feature('time').set('tlist', 'range(0,0.01,10)');  
-
-% Apply damping factor to nonlinear solver to stabilize the solution
-%model.study('std1').feature('time').feature('nonlin').set('damping', '0.01');  % 비선형 Solver에 감쇠 계수 설정
-
 %% Cost function and optimization using lsqcurvefit
 options = optimoptions(@lsqcurvefit, 'Display', 'iter', 'MaxIterations', 1);
 
